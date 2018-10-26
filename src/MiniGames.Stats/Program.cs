@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace MiniGame.Stats
+namespace MiniGames.Stats
 {
     public class Program
     {

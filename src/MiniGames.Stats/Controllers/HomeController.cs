@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using MiniGame.Stats.Models;
+using MiniGames.Stats.Models;
 
-namespace MiniGame.Stats.Controllers
+namespace MiniGames.Stats.Controllers
 {
     public class HomeController : Controller
     {

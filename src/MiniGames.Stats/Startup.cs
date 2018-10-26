@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MiniGame.Stats
+namespace MiniGames.Stats
 {
     public class Startup
     {
@@ -32,7 +33,17 @@ namespace MiniGame.Stats
             });
 
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options=>
+            {
+                options.RespectBrowserAcceptHeader = true;
+                options.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            })
+            .AddJsonOptions(options=>
+            {
+                 
+            })
+              .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

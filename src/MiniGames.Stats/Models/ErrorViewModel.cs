@@ -1,6 +1,6 @@
 using System;
 
-namespace MiniGame.Stats.Models
+namespace MiniGames.Stats.Models
 {
     public class ErrorViewModel
     {
