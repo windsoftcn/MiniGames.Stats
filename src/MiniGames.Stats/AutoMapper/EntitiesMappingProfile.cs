@@ -8,6 +8,6 @@ namespace MiniGames.Stats.AutoMapper
 {
     public class EntitiesMappingProfile : Profile
     {
-
+        
     }
 }

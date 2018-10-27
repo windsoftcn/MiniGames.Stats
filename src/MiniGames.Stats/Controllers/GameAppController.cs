@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MiniGames.Stats.Controllers
+namespace MiniGames.Stats.Controllers2
 {
     public class GameAppController : Controller 
     {

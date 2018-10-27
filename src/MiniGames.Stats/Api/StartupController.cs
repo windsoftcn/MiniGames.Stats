@@ -13,8 +13,14 @@ namespace MiniGames.Stats.Api
         }         
 
         [HttpPost]
-        public async Task<IActionResult> UserActive([FromBody] GameDto gameDto)
+        public async Task<IActionResult> GameStartupAsync([FromBody] GameDto gameDto)
         {
+            // 1. 验证 App是否存在
+
+            // 2. 验证 渠道规则, 
+
+            // 3. 验证 版本
+
             return Ok();
         }
     }

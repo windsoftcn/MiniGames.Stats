@@ -9,6 +9,8 @@ namespace MiniGames.Stats.Api
     {
         public string AppId { get; set; }
         
+        public string Version { get; set; }
+
         public string From { get; set; }
 
         public string SharedBy { get; set; }
