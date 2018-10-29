@@ -32,6 +32,7 @@ namespace MiniGames.Stats
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddMemoryCache();
 
             services.AddMvc(options=>
             {

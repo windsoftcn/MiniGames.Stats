@@ -8,6 +8,8 @@ namespace MiniGames.Stats.Api
     public class GameDto
     {
         public string AppId { get; set; }
+
+        public string OpenId { get; set; }
         
         public string Version { get; set; }
 

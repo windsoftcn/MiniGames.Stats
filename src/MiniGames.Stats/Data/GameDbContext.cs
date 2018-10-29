@@ -12,7 +12,7 @@ namespace MiniGames.Stats.Data
 
         public DbSet<Merchant> Merchant { get; set; }
 
-        public DbSet<GameMerchant> GameMerchant { get; set; }
+        public DbSet<GamePromotion> GameMerchant { get; set; }
 
         public DbSet<Advertisement> Advertisements { get; set; }
 
@@ -27,33 +27,7 @@ namespace MiniGames.Stats.Data
 
             builder.ApplyConfiguration(new GameAppConfigurations());
                 
-            builder.Entity<GameApp>().HasKey(g => g.AppId);
-            builder.Entity<GameApp>()
-                .Property(g => g.AppId)
-                .IsRequired()
-                .ValueGeneratedNever()
-                .HasMaxLength(36);
-
-            builder.Entity<GameApp>()
-                .Property(g => g.Key)                
-                .HasMaxLength(36);
             
-            
-
-            builder.Entity<Merchant>(m =>
-            {
-
-            });
-
-            builder.Entity<GameMerchant>(gm =>
-            {
-
-            });
-
-            builder.Entity<Advertisement>(ad =>
-            {
-
-            });
         }
     }
 }

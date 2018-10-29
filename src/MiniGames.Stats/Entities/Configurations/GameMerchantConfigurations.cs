@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MiniGames.Stats.Entities.Configurations
 {
-    public class GameMerchantConfigurations : IEntityTypeConfiguration<GameMerchant>
+    public class GameMerchantConfigurations : IEntityTypeConfiguration<GamePromotion>
     {
-        public void Configure(EntityTypeBuilder<GameMerchant> builder)
+        public void Configure(EntityTypeBuilder<GamePromotion> builder)
         {
             throw new NotImplementedException();
         }
