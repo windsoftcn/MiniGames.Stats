@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MiniGames.Stats.Api
 {
-    public class GameDto
+    public class GameUserDto
     {
         public string AppId { get; set; }
 

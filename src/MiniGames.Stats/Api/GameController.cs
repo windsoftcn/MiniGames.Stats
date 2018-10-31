@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace MiniGames.Stats.Api
 {
-    [Route("api/[controller]")]
-    public class ShareController : ControllerBase
+    public class GameController : ControllerBase
     {
+        public GameController()
+        {
 
+        }
     }
 }

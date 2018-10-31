@@ -7,6 +7,9 @@ namespace MiniGames.Stats.Services
 {
     public class GameStatsService : IGameStatsService
     {
-
+        public Task<bool> GameUserExistsAsync(string openId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
