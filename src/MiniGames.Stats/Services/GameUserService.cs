@@ -34,7 +34,7 @@ namespace MiniGames.Stats.Services
             }
             
             // 记录活跃 / 天
-            await UserActiveCountAsync(userSequentialId, dateTime);
+            await DailyUserActiveCountAsync(userSequentialId, dateTime);
 
             // 记录登录 / 天
             await DailyLoginCountAsync(userSequentialId, dateTime);
@@ -69,17 +69,17 @@ namespace MiniGames.Stats.Services
 
         public Task<bool> DailyLoginCountAsync(long userSequentialId, DateTimeOffset? dateTime = null)
         {
-            return redisProvider.Database.StringSetBitAsync(RedisKeys.GetHourlyNewUserCountKey(dateTime), userSequentialId, true);
+            return redisProvider.Database.StringSetBitAsync(RedisKeys.GetDailyLoginUserCountKey(dateTime), userSequentialId, true);
         }
 
         public Task<bool> HourlyLoginCountAsync(long userSequentialId, DateTimeOffset? dateTime = null)
         {
-            return redisProvider.Database.StringSetBitAsync(RedisKeys.GetHourlyNewUserCountKey(dateTime), userSequentialId, true);
+            return redisProvider.Database.StringSetBitAsync(RedisKeys.GetHourlyLoginUserCountKey(dateTime), userSequentialId, true);
         }
 
-        public Task<bool> UserActiveCountAsync(long userSequentialId, DateTimeOffset? dateTime = null)
+        public Task<bool> DailyUserActiveCountAsync(long userSequentialId, DateTimeOffset? dateTime = null)
         {
-            return redisProvider.Database.StringSetBitAsync(RedisKeys.GetHourlyNewUserCountKey(dateTime), userSequentialId, true);
+            return redisProvider.Database.StringSetBitAsync(RedisKeys.GetDailyActiveUserCountKey(dateTime), userSequentialId, true);
         }
 
         public async Task<long> GetUserSequentialIdAsync(string userId)

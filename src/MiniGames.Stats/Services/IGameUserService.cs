@@ -16,7 +16,7 @@ namespace MiniGames.Stats.Services
         Task<bool> DailyLoginCountAsync(long userSequentialId, DateTimeOffset? dateTime = null);
 
         Task<bool> HourlyLoginCountAsync(long userSequentialId, DateTimeOffset? dateTime = null);
-        Task<bool> UserActiveCountAsync(long userSequentialId, DateTimeOffset? dateTime = null);
+        Task<bool> DailyUserActiveCountAsync(long userSequentialId, DateTimeOffset? dateTime = null);
 
         Task<long> GetUserSequentialIdAsync(string userId);
       

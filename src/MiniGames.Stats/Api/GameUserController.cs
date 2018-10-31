@@ -18,7 +18,7 @@ namespace MiniGames.Stats.Api
             this.gameUserService = gameUserService ?? throw new ArgumentNullException(nameof(gameUserService));
         }         
 
-        [HttpPost]
+        [HttpPost("login")]
         public async Task<IActionResult> LoginAsync([FromBody] GameUserDto gameUserDto)
         {
             // 验证 App是否存在

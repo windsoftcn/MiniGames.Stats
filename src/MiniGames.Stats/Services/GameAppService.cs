@@ -29,7 +29,7 @@ namespace MiniGames.Stats.Services
                
         public async Task<bool> GameAppExistsAsync(string appId)
         {
-            if (CachedGameApps.Any(g => g.AppId.Equals(appId)))
+            if (CachedGameApps?.Any(g => g.AppId.Equals(appId)) ?? false)
             {
                 return true;
             }

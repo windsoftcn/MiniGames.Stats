@@ -16,7 +16,11 @@ namespace MiniGames.Stats.Entities.Configurations
                 .HasMaxLength(36)
                 .IsRequired()
                 .ValueGeneratedNever();
-                        
+
+
+            builder.HasData(
+                new GameApp { AppId = "TestAppId0123456789", Key = "SecurityKey", Name = "TestAppId" });
+
         }
     }
 }
