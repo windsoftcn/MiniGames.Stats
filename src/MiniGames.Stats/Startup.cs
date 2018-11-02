@@ -55,9 +55,9 @@ namespace MiniGames.Stats
             .AddDefaultTokenProviders();
 
             services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(Configuration.GetConnectionString("RedisDb")));
-            services.AddTransient<IRedisProvider, RedisProvider>();
+            services.AddSingleton<IRedisProvider, RedisProvider>();
             services.AddTransient<IGameAppService, GameAppService>();
-            services.AddTransient<IGameUserService, GameUserService>();
+            services.AddTransient<IGameStatsService, GameStatsService>();
 
 
             services.AddMvc(options=>

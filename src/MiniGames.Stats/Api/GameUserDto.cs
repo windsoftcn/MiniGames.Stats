@@ -7,11 +7,11 @@ namespace MiniGames.Stats.Api
 {
     public class GameUserDto
     {
-        public string AppId { get; set; }
-
-        public string OpenId { get; set; }
+        public string GameAppId { get; set; }
         
         public string Version { get; set; }
+
+        public string OpenId { get; set; }
 
         public string From { get; set; }
 

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Threading;
 using Xunit;
 
 namespace MiniGames.Stats.Tests
@@ -11,7 +12,7 @@ namespace MiniGames.Stats.Tests
     public class MockGameUserLoginTest
     {
         
-        private readonly string LoginTestUrl = "https://localhost:5001/api/gameuser/login";
+        private readonly string LoginTestUrl = "https://localhost:44346/api/game/login";
         private const int MockUserNumber = 10000;
 
         public MockGameUserLoginTest()
@@ -27,7 +28,7 @@ namespace MiniGames.Stats.Tests
                 HttpContent content = new StringContent(JsonConvert.SerializeObject(mockUser));
                 content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
                 HttpClient httpClient = new HttpClient();
-                httpClient.PostAsync(LoginTestUrl, content); 
+                httpClient.PostAsync(LoginTestUrl, content).ConfigureAwait(false); 
             }
         } 
 
@@ -39,7 +40,7 @@ namespace MiniGames.Stats.Tests
             {
                 yield return new GameUserDto
                 {
-                    AppId = "TestAppId0123456789",
+                    GameAppId = "TestAppId0123456789",
                     OpenId = Guid.NewGuid().ToString("N"),
                     Version = "1.0.0",
                     From = "default",

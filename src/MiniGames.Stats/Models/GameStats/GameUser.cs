@@ -7,16 +7,13 @@ namespace MiniGames.Stats.Models.GameStats
 {
     public class GameUser
     {
-        public GameUser()
-        {
-            CreateTime = DateTimeOffset.Now;
-        }
+        public int Id { get; set; }
+
+        public string GameAppId { get; set; }
 
         public string OpenId { get; set; }
 
-        public DateTimeOffset CreateTime { get; set; } 
-                
-        public string CameFrom { get; set; }
-                
+        public DateTimeOffset CreateTime { get; set; } = DateTimeOffset.Now;
+        
     }
 }
